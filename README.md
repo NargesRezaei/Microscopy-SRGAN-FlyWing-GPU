@@ -14,7 +14,7 @@ The full workflow includes:
 - LR/HR paired dataset generation  
 - GPU-accelerated SRGAN training (Generator + Discriminator)  
 - Perceptual loss using VGG19 features  
-- Evaluation with PSNR / SSIM / MSE  
+- Evaluation with PSNR / SSIM   
 
 This work was partially presented in a conference poster (included below).
 
