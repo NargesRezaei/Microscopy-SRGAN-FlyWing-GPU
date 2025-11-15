@@ -31,6 +31,7 @@ Using fly wings allowed us to evaluate whether SRGAN can recover both:
 - **Large-scale structure** (vein geometry, global shape)
 
 In practice, the fly wing dataset provides a rich balance of detail and structure, making it a strong candidate for validating microscopy super-resolution models.
+
 ---
 
 ## 🧬 Network Architecture (Farsi Diagram)
