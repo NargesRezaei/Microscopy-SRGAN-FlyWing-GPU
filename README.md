@@ -172,7 +172,7 @@ print(scores)   # {'psnr':..., 'mse':..., 'ssim':...}
 A Farsi poster presentation of this work is included:
 
 ```text
-sr_gan_Poster.pdf
+sr_gan_poster.pdf
 ```
 ---
 
