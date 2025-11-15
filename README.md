@@ -92,7 +92,6 @@ src/preprocess_patches.py
 
 ## 📁 Project Structure
 
-```text
 microscopy-super-resolution-tensorflow/
 │
 ├── src/
@@ -118,7 +117,6 @@ microscopy-super-resolution-tensorflow/
 ## 🚀 Training Instructions
 
 ### Install dependencies:
-```bash
 pip install -r requirements.txt
 
 ### Run preprocessing (patch extraction + augmentation):
@@ -134,7 +132,7 @@ checkpoints/generator_epoch_X.h5
 Evaluation metrics (PSNR, SSIM, MSE) are implemented in:
 src/metrics_eval.py
 
-###Example usage:
+### Example usage:
 from src.metrics_eval import compare_images
 
 scores = compare_images(sr_image, hr_image)
