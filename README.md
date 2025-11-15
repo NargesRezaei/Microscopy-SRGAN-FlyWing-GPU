@@ -58,7 +58,7 @@ The SRGAN successfully reconstructs edge continuity, fine texture, and structura
 
 | Metric | Value |
 |--------|-------|
-| **PSNR** | 29.40 dB |
+| **PSNR** | 29.40 |
 | **SSIM** | 0.85 |
 
 ---
