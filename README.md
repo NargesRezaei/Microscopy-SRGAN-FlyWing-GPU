@@ -72,3 +72,85 @@ Training was performed on:
 ```python
 print("Num GPUs Available:", len(tf.config.list_physical_devices("GPU")))
 strategy = tf.distribute.MirroredStrategy()
+
+
+---
+
+## 🛠️ Preprocessing Pipeline
+
+All preprocessing steps are implemented in:
+src/preprocess_patches.py
+
+
+### Steps:
+- Extract **128×128** HR patches from raw microscopy images  
+- Apply augmentation:  
+  - 90°, 180°, 270° rotations  
+  - Vertical flips  
+- Generate **32×32** LR patches by downsampling  
+- Save paired LR/HR images for SRGAN training  
+
+---
+
+## 📁 Project Structure
+
+```text
+microscopy-super-resolution-tensorflow/
+│
+├── src/
+│   ├── preprocess_patches.py      # Patch extraction + augmentation
+│   ├── dataset.py                 # LR/HR loader
+│   ├── models_srgan.py            # Generator + Discriminator + VGG extractor
+│   ├── train_sr.py                # Full SRGAN training loop
+│   └── metrics_eval.py            # PSNR, SSIM, MSE metrics
+│
+├── examples/
+│   ├── example_lr.png             # LR example
+│   ├── example_sr.png             # SRGAN output
+│   ├── example_hr.png             # HR example
+│   └── network_arch_fa.png        # Farsi architecture diagram
+│
+└── data/
+    ├── raw/                       # Raw microscopy images (not included)
+    ├── patches_hr/                # HR patches (generated locally)
+    └── patches_lr32/              # LR patches (generated locally)
+
+---
+
+## 🚀 Training Instructions
+
+### Install dependencies:
+```bash
+pip install -r requirements.txt
+
+### Run preprocessing (patch extraction + augmentation):
+python -m src.preprocess_patches
+
+### Train SRGAN:
+python -m src.train_sr
+
+Trained generator models are saved in:
+checkpoints/generator_epoch_X.h5
+
+## 📊 Evaluation
+Evaluation metrics (PSNR, SSIM, MSE) are implemented in:
+src/metrics_eval.py
+
+###Example usage:
+from src.metrics_eval import compare_images
+
+scores = compare_images(sr_image, hr_image)
+print(scores)   # {'psnr':..., 'mse':..., 'ssim':...}
+
+## 📝 Conference Poster (Farsi)
+A Farsi poster presentation of this work is included:
+Narges-Poster.pdf
+
+### 📚 Citation
+Rezaei, N., et al.
+"Microscopy Image Super-Resolution using SRGAN."
+Poster Presentation, Iranian Optics & Photonics Conference (2024).
+
+### 💡 Acknowledgements
+This project uses TensorFlow, Keras, OpenCV, scikit-image, NumPy, and CUDA-enabled GPU computation.
+---
