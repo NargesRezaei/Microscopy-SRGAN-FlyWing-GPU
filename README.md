@@ -178,3 +178,13 @@ sr_gan_poster.pdf
 ## 💡 Acknowledgements
 
 This project uses TensorFlow, Keras, OpenCV, scikit-image, NumPy, and CUDA-enabled GPU computation.
+
+
+## 📚 References
+
+This implementation reproduces the core methodology of the original SRGAN paper:
+
+Ledig et al.,  
+**"Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network"**,  
+CVPR 2017.  
+https://arxiv.org/abs/1609.04802
