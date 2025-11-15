@@ -67,9 +67,9 @@ Training was performed on:
 
 - **NVIDIA RTX 3060 (12 GB)**  
 - TensorFlow 2.x  
-- tf.distribute.MirroredStrategy` for multi-GPU compatibility
+- `tf.distribute.MirroredStrategy` for multi-GPU compatibility
 - 
-python
+```python
 print("Num GPUs Available:", len(tf.config.list_physical_devices("GPU")))
 strategy = tf.distribute.MirroredStrategy()
 ---
@@ -93,6 +93,7 @@ src/preprocess_patches.py
 ## 📁 Project Structure
 
 microscopy-super-resolution-tensorflow/
+```text
 │
 ├── src/
 │   ├── preprocess_patches.py      # Patch extraction + augmentation
@@ -111,7 +112,7 @@ microscopy-super-resolution-tensorflow/
     ├── raw/                       # Raw microscopy images (not included)
     ├── patches_hr/                # HR patches (generated locally)
     └── patches_lr32/              # LR patches (generated locally)
-
+```
 ---
 
 ## 🚀 Training Instructions
